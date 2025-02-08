@@ -41,10 +41,10 @@ bonus : $(OBJS_BONUS)
 	$(ARCHV) $(NAME) $(OBJS_BONUS)
 
 clean :
-	$(RM) $(OBJS_FUN) $(OBJS_BONUS)
+	@$(RM) $(OBJS_FUN) $(OBJS_BONUS)
 
 fclean : clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re : fclean all
 

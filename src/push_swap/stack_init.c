@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 13:07:03 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/02 10:48:25 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/03 15:28:26 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-static void	fail(t_stack **a, char *content, int status)
+void	fail(t_stack **a, char *content, int status)
 {
 	free_stack(a);
 	fail_push_swap(content, status);
@@ -74,13 +74,13 @@ void	stack_init(t_stack **a, char **args)
 	long	nb;
 
 	i = 0;
-	printf(YELLOW "\n ********* check number permission: *********** \n\n");
+	//printf(YELLOW "\n ********* check number permission: *********** \n\n");
 	while (args[i])
 	{
-		if (!check_digits(args[i])) 
-    		printf("%sFailed%s\n", RED, RESET);
-		else 
-    		printf("%sSuccessfully%s\n", GREEN, RESET);
+		// if (!check_digits(args[i])) 
+    	// 	printf("%sFailed%s\n", RED, RESET);
+		// else 
+    	// 	printf("%sSuccessfully%s\n", GREEN, RESET);
 		if (!check_digits(args[i]))
 		{
 			fail(a, "Not a valid number", 1);
@@ -97,5 +97,5 @@ void	stack_init(t_stack **a, char **args)
 		push_back(a, (int)nb);
 		i++;
 	}
-	print_stack_tesssssssssssssst(*a);
+	//print_stack_tesssssssssssssst(*a);
 }

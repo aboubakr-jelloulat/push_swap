@@ -1,49 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   about_stack.c                                      :+:      :+:    :+:   */
+/*   range.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/01 10:48:18 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/06 13:00:49 by ajelloul         ###   ########.fr       */
+/*   Created: 2025/02/07 16:18:05 by ajelloul          #+#    #+#             */
+/*   Updated: 2025/02/08 11:39:26 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-t_stack	*lstnew(int content)
+void	range(t_stack **a, t_stack **b)
 {
-	t_stack	*node;
+	int start = 0;
+	int end = 15;
 
-	node = (t_stack *)malloc(sizeof(t_stack));
-	if (!node)
-		return (NULL);
-	node->data = content;
-	node->index = 0;
-	node->next = NULL;
-	return (node);
-}
-
-void	push_back(t_stack **head, int data)
-{
-	t_stack	*new_node;
-	t_stack	*cur;
-
-	if (!head)
-		return ;
-	new_node = lstnew(data);
-	if (!*head)
+	while (*a)
 	{
-		*head = new_node;
-	}
-	else
-	{
-		cur = *head;
-		while (cur->next != NULL)
+		if ((*a)->index >= start && (*a)->index <= end)
 		{
-			cur = cur->next;
+			pb(a, b); start++; end++;
 		}
-		cur->next = new_node;
+		else if ((*a)->index < start)
+		{
+			pb(a, b);
+			rb(b); start++; end++;
+		}
+		else
+			ra(a);
 	}
 }

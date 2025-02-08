@@ -1,49 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   about_stack.c                                      :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/01 10:48:18 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/06 13:00:49 by ajelloul         ###   ########.fr       */
+/*   Created: 2025/02/06 09:09:32 by ajelloul          #+#    #+#             */
+/*   Updated: 2025/02/06 11:03:46 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-t_stack	*lstnew(int content)
+static t_stack	*bring_biggest_node(t_stack *head)
 {
-	t_stack	*node;
-
-	node = (t_stack *)malloc(sizeof(t_stack));
-	if (!node)
-		return (NULL);
-	node->data = content;
-	node->index = 0;
-	node->next = NULL;
-	return (node);
-}
-
-void	push_back(t_stack **head, int data)
-{
-	t_stack	*new_node;
-	t_stack	*cur;
+	t_stack	*biggest;
 
 	if (!head)
-		return ;
-	new_node = lstnew(data);
-	if (!*head)
+		return (NULL);
+	biggest = head;
+	while (head)
 	{
-		*head = new_node;
-	}
-	else
-	{
-		cur = *head;
-		while (cur->next != NULL)
+		if (head->data > biggest->data)
 		{
-			cur = cur->next;
+			biggest = head;	
 		}
-		cur->next = new_node;
+		head = head->next;
+	}
+	return (biggest);
+}
+
+void	sort_three(t_stack **a)
+{
+	t_stack	*biggest;
+
+	biggest = bring_biggest_node(*a);
+	if (biggest == *a)
+	{
+		ra(a);
+	}	
+	else if (biggest == (*a)->next)
+	{
+		rra(a);
+	}
+	if ((*a)->data > (*a)->next->data)
+	{
+		sa(a);
 	}
 }
