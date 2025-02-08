@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 09:49:37 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/08 10:03:23 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/08 16:33:42 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ typedef struct s_stack
 	int				data;
 	int				index;
 }					t_stack;
-
 
 
 void	fail_push_swap(char *content, int status);

@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 10:08:41 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/08 11:36:19 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/08 16:44:16 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,8 @@ int main(int ac, char **av)
 		new = parsing_args(ac - 1, av + 1);
 	if (!new)
 	 	fail_push_swap("Error: Parsing failed", 1);
-	int u;
-	u = 0;
+	// int u;
+	// u = 0;
 	//printf(YELLOW "\n ********* print 2D *********** \n\n");
 	// while (new[u])
 	// {
@@ -104,12 +104,17 @@ int main(int ac, char **av)
 	stack_init(&a, new);
 	if (is_sorted(a))
 		fail(&a, "Stack is sorted", 1);
-	printf(YELLOW "\n movment :  \n\n");
+	// fail_push_swap("faaaaaat", 1);
+	// printf(YELLOW "\n movment :  \n\n");
 	algorithme(&a, &b);
-	print_stack_A(a);
-	print_stack_B(b);
+	free_2d(new);
+	free_stack(&a);
+	//free_stack(&b);
+	//free_stack(&a);
+	// print_stack_A(a);
+	// print_stack_B(b);
 	
-	// 	printf("\n%sNot sorted%s\n", RED, RESET);
+	//printf("\n%sNot sorted%s\n", RED, RESET);
 	// else
 	// 	printf("\n%sSorteed%s\n", GREEN, RESET);
 		

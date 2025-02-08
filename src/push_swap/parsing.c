@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 11:11:23 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/02 10:42:34 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/08 16:33:19 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static int	count_args(int ac, char **av)
 			count++;
 			j++;
 		}
-		free(split);
+		free_2d(split);
 		i++;
 	}
 	return (count);
