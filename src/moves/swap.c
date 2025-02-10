@@ -6,31 +6,26 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 17:16:37 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/05 17:33:08 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/09 11:48:14 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-
-bool swap(t_stack **stack)
+bool	swap(t_stack **stack)
 {
-    t_stack *st;
-    t_stack *nd;
+	t_stack	*st;
+	t_stack	*nd;
 
-    if (!stack || !*stack || !(*stack)->next)
-        return (false);
-
-    st = *stack;
-    nd = (*stack)->next;
-
-    st->next = nd->next;
-    nd->next = st;
-    *stack = nd;
-
-    return (true);
+	if (!stack || !*stack || !(*stack)->next)
+		return (false);
+	st = *stack;
+	nd = (*stack)->next;
+	st->next = nd->next; // We are essentially removing nd  from its current position and pointing st to the node after .
+	nd->next = st;
+	*stack = nd;
+	return (true);
 }
-
 
 bool	sa(t_stack **a)
 {

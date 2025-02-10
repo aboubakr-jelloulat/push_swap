@@ -6,35 +6,39 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 10:40:37 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/08 11:32:51 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/10 11:29:45 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static void sorting(t_stack **a, t_stack **b)
+static void	sorting(t_stack **a, t_stack **b)
 {
-	int len;
+	int	len;
 
 	len = lstsize(*a);
 	assigning_indexes(a, len);
 	if (len == 2)
 		sa(a);
-	if (len == 3)
+	else if (len == 3)
 		sort_three(a);
-	if (len == 4)
+	else if (len == 4)
 		sort_four(a, b);
-	if (len == 5)
+	else if (len == 5)
 		sort_five(a, b);
+	else if (len <= 100)
+		range(a, b, 15);
+	else if (len > 100 && len <= 500)
+		range(a, b, 35);
 	else
-		range(a, b);
+		range(a, b, 45);
 }
 
-static int get_max_idx_at_b(t_stack *b)
+static int	get_max_idx_at_b(t_stack *b)
 {
-	int i;
-	int max;
-	int tmp;
+	int	i;
+	int	max;
+	int	tmp;
 
 	i = 0;
 	max = 0;
@@ -52,11 +56,11 @@ static int get_max_idx_at_b(t_stack *b)
 	return (max);
 }
 
-static void pushing_back_to_a(t_stack **a, t_stack **b)
+static void	pushing_back_to_a(t_stack **a, t_stack **b)
 {
-	int max_idx;
-	int half_size;
-	
+	int	max_idx;
+	int	half_size;
+
 	while (*b)
 	{
 		half_size = lstsize(*b) / 2;
@@ -76,7 +80,7 @@ static void pushing_back_to_a(t_stack **a, t_stack **b)
 	}
 }
 
-void algorithme(t_stack **a, t_stack **b)
+void	algorithme(t_stack **a, t_stack **b)
 {
 	sorting(a, b);
 	pushing_back_to_a(a, b);

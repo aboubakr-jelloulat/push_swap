@@ -6,12 +6,11 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 11:11:23 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/08 16:33:19 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/10 19:52:17 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
 
 void	free_2d(char **str)
 {
@@ -19,8 +18,13 @@ void	free_2d(char **str)
 
 	i = 0;
 	while (str[i])
-		free (str[i++]);
+	{
+		free (str[i]);
+		str[i] = NULL;
+		i++;
+	}
 	free (str);
+	str = NULL;
 }
 
 static int	count_args(int ac, char **av)
@@ -36,7 +40,7 @@ static int	count_args(int ac, char **av)
 	{
 		if (!av[i][0] || ft_strspn(av[i], " ") == ft_strlen(av[i]))
 			fail_push_swap("Empty argument or only spaces", 1);
-		split = ft_split(av[i], ' ');
+		split = ft_split(av[i], ' '); 
 		if (!split)
 			return (-1);
 		j = 0;
@@ -72,7 +76,7 @@ static char	**fill_args(int ac, char **av, int count)
 		j = 0;
 		while (split[j])
 			new[k++] = split[j++];
-		free (split);
+		free(split);
 		i++;
 	}
 	new[k] = NULL;

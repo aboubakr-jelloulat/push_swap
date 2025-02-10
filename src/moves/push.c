@@ -6,27 +6,11 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:56:37 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/05 17:29:33 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/10 11:04:54 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
-void	add_front(t_stack **head, int data) // noo
-{
-	t_stack	*new;
-
-	new = lstnew(data);
-	if (!new)
-		return ;
-	if (!*head)
-		*head =  new;
-	else
-	{
-		new->next = *head;
-		(*head) = new;
-	}
-}
 
 bool	push(t_stack **from, t_stack **to)
 {
@@ -36,7 +20,7 @@ bool	push(t_stack **from, t_stack **to)
 		return (false);
 	st = *from;
 	*from = st->next;
-	st->next = *to;
+	st->next = *to; // st still points to 12 hna kandiro link i3ni st-> link _to b mab9atchi m3a head 
 	*to = st;
 	return (true);
 }
@@ -56,4 +40,3 @@ bool	pb(t_stack **a, t_stack **b)
 	ft_putendl_fd("pb", 1);
 	return (true);
 }
-

@@ -6,17 +6,16 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 15:28:51 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/05 17:37:30 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/09 11:10:22 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-
-static int	*get_copy(t_stack *stack, int size) // O(n)
+static int	*get_copy(t_stack *stack, int size)
 {
 	int	*copy;
-	int u;
+	int	u;
 
 	u = 0;
 	copy = malloc(sizeof(int) * size);
@@ -31,19 +30,19 @@ static int	*get_copy(t_stack *stack, int size) // O(n)
 	return (copy);
 }
 
-static int	*sort_array(t_stack *stack, int len) // Bubble Sort algorithm O(n^2)
+static int	*sort_array(t_stack *stack, int len)
 {
 	int	*arr;
-	int i;
-	int j;
-	int tmp;
+	int	i;
+	int	j;
+	int	tmp;
 
 	arr = get_copy(stack, len);
 	i = 1;
 	while (i <= len)
 	{
 		j = 0;
-		while (j < len - i) // len - i - 1
+		while (j < len - i)
 		{
 			if (arr[j] > arr[j + 1])
 			{
@@ -58,7 +57,7 @@ static int	*sort_array(t_stack *stack, int len) // Bubble Sort algorithm O(n^2)
 	return (arr);
 }
 
-void	assigning_indexes(t_stack **stack, int len)  // O(n^2) due to nested loops (one for the stack and one for the sorted array
+void	assigning_indexes(t_stack **stack, int len)
 {
 	t_stack	*tmp_head;
 	int		*sort_arr;

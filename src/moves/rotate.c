@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 18:35:49 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/05 17:30:19 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/09 12:08:15 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,19 @@ t_stack	*iteration(t_stack *head)
 
 bool	rotate(t_stack	**stack)
 {
-	t_stack	*head;
+	t_stack	*tmp_head;
 	t_stack	*last;
 
 	if (!stack || !*stack || !(*stack)->next)
 		return (false);
-	head = *stack;
-	last = iteration(head);
-	*stack = head->next;
-	last->next = head;
-	head->next = NULL;
+	tmp_head = *stack;
+	last = iteration(tmp_head);
+	*stack = tmp_head->next;
+	last->next = tmp_head;
+	tmp_head->next = NULL; // for no dungling pointer for the first 
 	return (true);
 }
+
 bool	ra(t_stack **a)
 {
 	if (!rotate(a))

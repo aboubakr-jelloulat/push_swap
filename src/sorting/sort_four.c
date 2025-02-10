@@ -6,14 +6,13 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 09:57:44 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/06 13:11:06 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/10 09:17:47 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../../includes/push_swap.h"
 
-static int find_min_index(t_stack *head)
+static int	find_min_index(t_stack *head)
 {
 	int	min_pos;
 	int	current_pos;
@@ -48,7 +47,6 @@ void	shift_min_to_front(t_stack **a)
 	else
 		while (min_position++ < len)
 			rra(a);
-	
 }
 
 void	sort_four(t_stack **a, t_stack **b)
@@ -58,4 +56,3 @@ void	sort_four(t_stack **a, t_stack **b)
 	sort_three(a);
 	pa(a, b);
 }
-

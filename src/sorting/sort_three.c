@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 09:09:32 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/06 11:03:46 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/09 15:20:03 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static t_stack	*bring_biggest_node(t_stack *head)
 	{
 		if (head->data > biggest->data)
 		{
-			biggest = head;	
+			biggest = head;
 		}
 		head = head->next;
 	}
@@ -38,7 +38,7 @@ void	sort_three(t_stack **a)
 	if (biggest == *a)
 	{
 		ra(a);
-	}	
+	}
 	else if (biggest == (*a)->next)
 	{
 		rra(a);

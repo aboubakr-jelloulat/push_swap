@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 13:07:03 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/08 16:33:30 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/10 20:00:04 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ void	free_stack(t_stack **stack)
 	t_stack	*tmp;
 
 	if (!stack || !*stack)
-        return;
+		return ;
 	curr = *stack;
 	while (curr)
 	{
 		tmp = curr;
 		curr = curr->next;
-		free (tmp);
+		free(tmp);
 	}
 	*stack = NULL;
 }
@@ -56,7 +56,7 @@ static bool	check_digits(char *str)
 static bool	check_duplicate(t_stack *stack, int nb)
 {
 	if (!stack)
-        return (true);
+		return (true);
 	while (stack)
 	{
 		if (stack->data == nb)
@@ -74,17 +74,14 @@ void	stack_init(t_stack **a, char **args)
 	long	nb;
 
 	i = 0;
-	//printf(YELLOW "\n ********* check number permission: *********** \n\n");
 	while (args[i])
 	{
-		// if (!check_digits(args[i])) 
-    	// 	printf("%sFailed%s\n", RED, RESET);
-		// else 
-    	// 	printf("%sSuccessfully%s\n", GREEN, RESET);
 		if (!check_digits(args[i]))
 		{
 			fail(a, "Not a valid number", 1);
 		}
+		if (!long_length(args[i]))
+			fail(a, "Number is too large", 1);
 		nb = ft_atol(args[i]);
 		if (nb > INT_MAX || nb < INT_MIN)
 		{
@@ -97,5 +94,4 @@ void	stack_init(t_stack **a, char **args)
 		push_back(a, (int)nb);
 		i++;
 	}
-	//print_stack_tesssssssssssssst(*a);
 }
