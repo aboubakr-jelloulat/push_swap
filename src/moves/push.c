@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 15:56:37 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/10 11:04:54 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/11 12:09:04 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ bool	push(t_stack **from, t_stack **to)
 		return (false);
 	st = *from;
 	*from = st->next;
-	st->next = *to; // st still points to 12 hna kandiro link i3ni st-> link _to b mab9atchi m3a head 
+	st->next = *to;
 	*to = st;
 	return (true);
 }

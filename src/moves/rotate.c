@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 18:35:49 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/09 12:08:15 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/11 12:09:19 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ bool	rotate(t_stack	**stack)
 	last = iteration(tmp_head);
 	*stack = tmp_head->next;
 	last->next = tmp_head;
-	tmp_head->next = NULL; // for no dungling pointer for the first 
+	tmp_head->next = NULL;
 	return (true);
 }
 

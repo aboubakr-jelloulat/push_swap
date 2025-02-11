@@ -6,15 +6,15 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 10:48:18 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/10 10:33:09 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/11 12:14:49 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-t_stack *lstnew(int content)
+t_stack	*lstnew(int content)
 {
-	t_stack *node;
+	t_stack	*node;
 
 	node = (t_stack *)malloc(sizeof(t_stack));
 	if (!node)
@@ -25,13 +25,13 @@ t_stack *lstnew(int content)
 	return (node);
 }
 
-void push_back(t_stack **head, int data)
+void	push_back(t_stack **head, int data)
 {
-	t_stack *new_node;
-	t_stack *cur;
+	t_stack	*new_node;
+	t_stack	*cur;
 
 	if (!head)
-		return;
+		return ;
 	new_node = lstnew(data);
 	if (!*head)
 	{
@@ -50,8 +50,8 @@ void push_back(t_stack **head, int data)
 
 bool	long_length(const char *str)
 {
-	int i;
-	int len;
+	int	i;
+	int	len;
 
 	i = 0;
 	if (str[i] == '-' || str[i] == '+')

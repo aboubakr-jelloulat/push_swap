@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 09:49:37 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/10 10:34:05 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/11 12:27:36 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@
 # include <stdbool.h>
 # include <limits.h>
 
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 4
+
+# endif
+
 # define RED "\033[0;31m"
 
 typedef struct s_stack
@@ -26,6 +31,12 @@ typedef struct s_stack
 	int				data;
 	int				index;
 }					t_stack;
+
+typedef enum e_part
+{
+	bonus,
+	mandatory
+}	t_part;
 
 void	fail_push_swap(char *content, int status);
 char	**parsing_args(int ac, char **av);
@@ -39,6 +50,7 @@ void	assigning_indexes(t_stack **stack, int len);
 t_stack	*lstnew(int content);
 t_stack	*iteration(t_stack *head);
 
+bool	is_sorted(t_stack *stack, t_part part);
 bool	long_length(const char *str);
 bool	pa(t_stack **a, t_stack **b);
 bool	pb(t_stack **a, t_stack **b);
@@ -52,11 +64,18 @@ bool	rra(t_stack **a);
 bool	rrb(t_stack **b);
 bool	rrr(t_stack **a, t_stack **b);
 
+bool	swap(t_stack **stack);
+bool	push(t_stack **from, t_stack **to);
+bool	rotate(t_stack	**stack);
+bool	reverse_rotate(t_stack **stack);
+
 void	sort_three(t_stack **a);
 void	sort_four(t_stack **a, t_stack **b);
 void	shift_min_to_front(t_stack **a);
 void	sort_five(t_stack **a, t_stack **b);
 void	range(t_stack **a, t_stack **b, int end);
 void	algorithme(t_stack **a, t_stack **b);
+
+char	*get_next_line(int fd);
 
 #endif

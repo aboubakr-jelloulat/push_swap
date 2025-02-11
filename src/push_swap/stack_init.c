@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 13:07:03 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/10 20:00:04 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/11 12:12:15 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,18 +78,18 @@ void	stack_init(t_stack **a, char **args)
 	{
 		if (!check_digits(args[i]))
 		{
-			fail(a, "Not a valid number", 1);
+			fail(a, "Error", 1);
 		}
 		if (!long_length(args[i]))
-			fail(a, "Number is too large", 1);
+			fail(a, "Error", 1);
 		nb = ft_atol(args[i]);
 		if (nb > INT_MAX || nb < INT_MIN)
 		{
-			fail(a, "Not a valid integer", 1);
+			fail(a, "Error", 1);
 		}
 		if (!check_duplicate(*a, (int)nb))
 		{
-			fail(a, "Duplicate number found", 1);
+			fail(a, "Error", 1);
 		}
 		push_back(a, (int)nb);
 		i++;

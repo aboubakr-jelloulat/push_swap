@@ -1,5 +1,5 @@
 NAME         = push_swap
-BONUS_NAME   = push_swap_bonus
+BONUS_NAME   = checker
 
 CC           = cc
 CFLAGS       = -Wall -Wextra -Werror #-fsanitize=address
@@ -10,12 +10,13 @@ BONUS_HEADER = ./includes/push_swap_bonus.h
 
 LIBFT        = ./includes/libft/libft.a
 
-SRCS         = 	src/push_swap/main.c  	src/push_swap/parsing.c  	 src/push_swap/stack_init.c  	src/push_swap/about_stack.c\
+SRCS         = 	src/push_swap/main.c  	src/push_swap/parsing.c  	 src/push_swap/stack_init.c  	src/push_swap/about_stack.c  src/push_swap/utils.c\
                	src/moves/push.c 		src/moves/reverse_rotate.c   src/moves/rotate.c 			src/moves/swap.c src/sorting/indexing.c\
               	src/sorting/algorithme.c 	src/sorting/sort_three.c 	 src/sorting/sort_four.c 		src/sorting/range.c src/sorting/sort_five.c
               	
 
-BONUS        = 
+BONUS        = 	bonus/get_next_line_bonus.c bonus/checker_bonus.c src/push_swap/parsing.c src/push_swap/stack_init.c src/push_swap/about_stack.c src/moves/push.c \
+        		src/moves/reverse_rotate.c src/moves/rotate.c  src/moves/swap.c src/push_swap/utils.c
 
 OBJ_SRCS     = $(SRCS:.c=.o)
 OBJ_BONUS    = $(BONUS:.c=.o)

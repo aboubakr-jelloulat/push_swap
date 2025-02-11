@@ -6,11 +6,18 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 11:11:23 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/10 19:52:17 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/11 12:12:43 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
+
+void	fail_push_swap(char *content, int status)
+{
+	ft_putstr_fd(RED, 2);
+	ft_putendl_fd(content, 2);
+	exit(status);
+}
 
 void	free_2d(char **str)
 {
@@ -39,7 +46,7 @@ static int	count_args(int ac, char **av)
 	while (i < ac)
 	{
 		if (!av[i][0] || ft_strspn(av[i], " ") == ft_strlen(av[i]))
-			fail_push_swap("Empty argument or only spaces", 1);
+			fail_push_swap("Error", 1);
 		split = ft_split(av[i], ' '); 
 		if (!split)
 			return (-1);

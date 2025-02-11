@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 17:16:37 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/09 11:48:14 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/11 12:09:27 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ bool	swap(t_stack **stack)
 		return (false);
 	st = *stack;
 	nd = (*stack)->next;
-	st->next = nd->next; // We are essentially removing nd  from its current position and pointing st to the node after .
+	st->next = nd->next;
 	nd->next = st;
 	*stack = nd;
 	return (true);

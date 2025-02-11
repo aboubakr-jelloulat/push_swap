@@ -1,38 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   range.c                                            :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/07 16:18:05 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/11 12:10:06 by ajelloul         ###   ########.fr       */
+/*   Created: 2025/02/11 11:12:35 by ajelloul          #+#    #+#             */
+/*   Updated: 2025/02/11 12:13:02 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	range(t_stack **a, t_stack **b, int end)
+bool	is_sorted(t_stack *stack, t_part part)
 {
-	int	start;
-
-	start = 0;
-	while (*a)
+	if (part == mandatory)
 	{
-		if ((*a)->index >= start && (*a)->index <= end)
+		if (lstsize(stack) < 2)
 		{
-			pb(a, b);
-			start++;
-			end++;
+			exit(1);
 		}
-		else if ((*a)->index < start)
-		{
-			pb(a, b);
-			rb(b);
-			start++;
-			end++;
-		}
-		else
-			ra(a);
 	}
+	while (stack->next)
+	{
+		if (stack->data > stack->next->data)
+			return (false);
+		stack = stack->next;
+	}
+	return (true);
+}
+
+int	lstsize(t_stack *head)
+{
+	int	counter;
+
+	if (!head)
+		return (0);
+	counter = 0;
+	while (head)
+	{
+		counter++;
+		head = head->next;
+	}
+	return (counter);
 }
