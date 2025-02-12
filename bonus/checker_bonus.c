@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 09:36:14 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/12 12:22:01 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/12 12:41:48 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ static void	execute_instructions(t_stack **a, t_stack **b, char *move)
 	if (ft_strncmp(move, "sb\n", 3) == 0 || ft_strncmp(move, "ss\n", 3) == 0)
 		swap(b);
 	if (ft_strncmp(move, "pa\n", 3) == 0)
-		push(a, b);
-	if (ft_strncmp(move, "pb\n", 3) == 0)
 		push(b, a);
+	if (ft_strncmp(move, "pb\n", 3) == 0)
+		push(a, b);
 	if (ft_strncmp(move, "ra\n", 3) == 0 || ft_strncmp(move, "rr\n", 3) == 0)
 		rotate(a);
 	if (ft_strncmp(move, "rb\n", 3) == 0 || ft_strncmp(move, "rr\n", 3) == 0)
@@ -74,20 +74,6 @@ static void	read_instructions(t_stack **a, t_stack **b)
 		ft_putendl_fd("KO", 1);
 }
 
-// void foo()
-// {
-// 	system ("leaks -q checker");
-// }
-
-void print_stack(t_stack *head)
-{
-	while (head)
-	{
-		printf ("%d\n", head->data);
-		head = head->next;
-	}
-}
-
 int	main(int ac, char **av)
 {
 	t_stack	*a;
@@ -97,22 +83,15 @@ int	main(int ac, char **av)
 	a = NULL;
 	b = NULL;
 	new = NULL;
-	// atexit(foo);
 	if (ac == 1)
 		exit(1);
 	if (ac >= 2)
 		new = parsing_args(ac - 1, av + 1);
 	if (!new)
-		return 0;
+		return (0);
 	stack_init(&a, new);
 	free_2d(new);
-	// if (is_sorted(a, mandatory))
-	// 	exit(1);
 	read_instructions(&a, &b);
-	printf ("stack a : \n");
-	print_stack(a);
-	printf ("stack b : \n");
-	print_stack(b);
 	free_stack(&b);
 	free_stack(&a);
 	return (0);

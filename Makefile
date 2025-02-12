@@ -2,7 +2,7 @@ NAME         = push_swap
 BONUS_NAME   = checker
 
 CC           = cc
-CFLAGS       = -Wall -Wextra -Werror #-fsanitize=address
+CFLAGS       = -Wall -Wextra -Werror
 RM           = rm -f
 
 HEADER       = ./includes/push_swap.h
@@ -52,11 +52,6 @@ re: fclean all
 
 re_bonus: fclean bonus
 
-norminette :
-	norminette
-
-correct: all bonus clean 
 
 
-
-.PHONY: all bonus clean fclean re re_bonus norminette
+.PHONY: all bonus clean fclean re re_bonus 

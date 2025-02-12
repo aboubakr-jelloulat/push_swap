@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 09:49:37 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/12 10:41:00 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/12 12:41:32 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	assigning_indexes(t_stack **stack, int len);
 t_stack	*lstnew(int content);
 t_stack	*iteration(t_stack *head);
 
-int	is_sorted(t_stack *stack, t_part part);
+int		is_sorted(t_stack *stack, t_part part);
 bool	long_length(const char *str);
 bool	pa(t_stack **a, t_stack **b);
 bool	pb(t_stack **a, t_stack **b);
