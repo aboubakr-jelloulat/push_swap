@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 11:11:23 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/11 12:12:43 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/12 09:47:15 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	fail_push_swap(char *content, int status)
 {
-	ft_putstr_fd(RED, 2);
 	ft_putendl_fd(content, 2);
 	exit(status);
 }

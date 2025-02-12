@@ -6,14 +6,18 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 11:12:35 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/11 12:13:02 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/12 10:40:32 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-bool	is_sorted(t_stack *stack, t_part part)
+int	is_sorted(t_stack *stack, t_part part)
 {
+	if (!stack)
+	{
+		return (0);
+	}
 	if (part == mandatory)
 	{
 		if (lstsize(stack) < 2)

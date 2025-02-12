@@ -55,4 +55,8 @@ re_bonus: fclean bonus
 norminette :
 	norminette
 
+correct: all bonus clean 
+
+
+
 .PHONY: all bonus clean fclean re re_bonus norminette
