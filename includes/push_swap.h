@@ -46,7 +46,7 @@ void	fail_push_swap(char *content, int status);
 char	**parsing_args(int ac, char **av);
 void	free_2d(char **str);
 void	free_stack(t_stack **stack);
-void	fail(t_stack **a, char *content, int status);
+void	fail(t_stack **a, char *content, char **args);
 void	stack_init(t_stack **a, char **args);
 void	push_back(t_stack **head, int data);
 int		lstsize(t_stack	*head);

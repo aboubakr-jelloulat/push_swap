@@ -45,7 +45,10 @@ int	main(int ac, char **av)
 	stack_init(&a, new);
 	free_2d(new);
 	if (is_sorted(a, mandatory))
+	{
+		free_stack(&a);
 		exit (0);
+	}
 	algorithme(&a, &b);
 	print_stack(a);
 	ft_putendl_fd(YELLOW, 1);

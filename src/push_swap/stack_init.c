@@ -29,10 +29,11 @@ void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-void	fail(t_stack **a, char *content, int status)
+void	fail(t_stack **a, char *content, char **args)
 {
+	free_2d(args);
 	free_stack(a);
-	fail_push_swap(content, status);
+	fail_push_swap(content, 1);
 }
 
 static bool	check_digits(char *str)
@@ -41,7 +42,11 @@ static bool	check_digits(char *str)
 
 	i = 0;
 	if (str[i] == '-' || str[i] == '+')
+	{
+		if (!str[i + 1] || !ft_isdigit(str[i + 1]))
+			return (false);
 		i++;
+	}
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
@@ -78,19 +83,17 @@ void	stack_init(t_stack **a, char **args)
 	{
 		if (!check_digits(args[i]))
 		{
-			fail(a, "Error", 1);
+			fail(a, "Error", args);
 		}
 		if (!long_length(args[i]))
-			fail(a, "Error", 1);
+			fail(a, "Error", args);
 		nb = ft_atol(args[i]);
 		if (nb > INT_MAX || nb < INT_MIN)
 		{
-			fail(a, "Error int", 1);
+			fail(a, "Error int", args);
 		}
 		if (!check_duplicate(*a, (int)nb))
-		{
-			fail(a, "Error", 1);
-		}
+			fail(a, "Error", args);
 		push_back(a, (int)nb);
 		i++;
 	}
