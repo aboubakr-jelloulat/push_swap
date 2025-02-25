@@ -6,26 +6,11 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 10:08:41 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/15 18:20:55 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/25 20:25:09 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
-
-
-
-void print_stack(t_stack	*head)
-{
-	ft_putstr_fd(RED, 1);
-	ft_putendl_fd("Print stack : ", 1);
-
-	while (head)
-	{
-		printf ("%s value A :  %d\n", GREEN, head->data);
-		head = head->next;
-	}
-	
-}
 
 int	main(int ac, char **av)
 {
@@ -50,9 +35,6 @@ int	main(int ac, char **av)
 		exit (0);
 	}
 	algorithme(&a, &b);
-	print_stack(a);
-	ft_putendl_fd(YELLOW, 1);
-	print_stack(b);
 	free_stack(&a);
 	return (0);
 }

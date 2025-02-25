@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 11:11:23 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/15 09:56:04 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/25 20:11:12 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	free_2d(char **str)
 	int	i;
 
 	if (!str)
-		return;
+		return ;
 	i = 0;
 	while (str[i])
 	{

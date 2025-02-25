@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/01 10:48:18 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/15 10:29:48 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/25 20:10:58 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ bool	long_length(const char *str)
 		len++;
 	return (len <= 19);
 }
-int is_only_spaces(char *str)
+
+int	is_only_spaces(char *str)
 {
 	int	i;
 

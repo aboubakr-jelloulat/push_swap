@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 10:40:37 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/15 18:45:45 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/25 20:11:37 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ static void	pushing_back_to_a(t_stack **a, t_stack **b)
 			rb(b);
 	}
 }
-
 
 void	algorithme(t_stack **a, t_stack **b)
 {

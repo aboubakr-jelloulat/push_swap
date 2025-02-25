@@ -33,7 +33,7 @@ $(BONUS_NAME): $(OBJ_BONUS) $(LIBFT)
 
 
 %.o: %.c $(HEADER) $(BONUS_HEADER)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 
 $(LIBFT):

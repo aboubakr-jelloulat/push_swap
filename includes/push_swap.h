@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 09:49:37 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/15 18:18:10 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/25 20:15:01 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,6 @@
 
 # endif
 
-
-#define RED     "\033[31m"
-#define GREEN   "\033[32m"
-#define YELLOW  "\033[33m"
-#define BLUE    "\033[34m"
-
 typedef struct s_stack
 {
 	struct s_stack	*next;
@@ -42,8 +36,11 @@ typedef enum e_part
 	mandatory
 }	t_part;
 
+t_stack	*lstnew(int content);
+t_stack	*iteration(t_stack *head);
 void	fail_push_swap(char *content, int status);
 char	**parsing_args(int ac, char **av);
+char	*get_next_line(int fd);
 void	free_2d(char **str);
 void	free_stack(t_stack **stack);
 void	fail(t_stack **a, char *content, char **args);
@@ -51,10 +48,7 @@ void	stack_init(t_stack **a, char **args);
 void	push_back(t_stack **head, int data);
 int		lstsize(t_stack	*head);
 void	assigning_indexes(t_stack **stack, int len);
-t_stack	*lstnew(int content);
-t_stack	*iteration(t_stack *head);
-int 	is_only_spaces(char *str);
-
+int		is_only_spaces(char *str);
 int		is_sorted(t_stack *stack, t_part part);
 bool	long_length(const char *str);
 bool	pa(t_stack **a, t_stack **b);
@@ -68,19 +62,15 @@ bool	rr(t_stack **a, t_stack **b);
 bool	rra(t_stack **a);
 bool	rrb(t_stack **b);
 bool	rrr(t_stack **a, t_stack **b);
-
 bool	swap(t_stack **stack);
 bool	push(t_stack **from, t_stack **to);
 bool	rotate(t_stack	**stack);
 bool	reverse_rotate(t_stack **stack);
-
 void	sort_three(t_stack **a);
 void	sort_four(t_stack **a, t_stack **b);
 void	shift_min_to_front(t_stack **a);
 void	sort_five(t_stack **a, t_stack **b);
 void	range(t_stack **a, t_stack **b, int end);
 void	algorithme(t_stack **a, t_stack **b);
-
-char	*get_next_line(int fd);
 
 #endif

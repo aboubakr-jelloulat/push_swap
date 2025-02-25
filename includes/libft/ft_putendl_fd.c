@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 12:35:15 by ajelloul          #+#    #+#             */
-/*   Updated: 2024/11/04 17:48:25 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/25 20:12:34 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-
 	if (s)
 	{
 		while (*s)
