@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   range.c                                            :+:      :+:    :+:   */
+/*   chunck.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/07 16:18:05 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/11 12:10:06 by ajelloul         ###   ########.fr       */
+/*   Created: 2025/02/27 15:57:03 by ajelloul          #+#    #+#             */
+/*   Updated: 2025/02/27 15:57:57 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-void	range(t_stack **a, t_stack **b, int end)
+void	chuncking(t_stack **a, t_stack **b, int end)
 {
 	int	start;
 

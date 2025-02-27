@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 13:07:03 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/18 17:32:03 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/27 15:31:00 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	stack_init(t_stack **a, char **args)
 		nb = ft_atol(args[i]);
 		if (nb > INT_MAX || nb < INT_MIN)
 		{
-			fail(a, "Error int", args);
+			fail(a, "Error", args);
 		}
 		if (!check_duplicate(*a, (int)nb))
 			fail(a, "Error", args);

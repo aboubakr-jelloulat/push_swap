@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 09:49:37 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/25 20:15:01 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/27 15:55:24 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	sort_three(t_stack **a);
 void	sort_four(t_stack **a, t_stack **b);
 void	shift_min_to_front(t_stack **a);
 void	sort_five(t_stack **a, t_stack **b);
-void	range(t_stack **a, t_stack **b, int end);
+void	chuncking(t_stack **a, t_stack **b, int end);
 void	algorithme(t_stack **a, t_stack **b);
 
 #endif

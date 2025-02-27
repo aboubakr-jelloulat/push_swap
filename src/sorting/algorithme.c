@@ -6,7 +6,7 @@
 /*   By: ajelloul <ajelloul@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 10:40:37 by ajelloul          #+#    #+#             */
-/*   Updated: 2025/02/25 20:11:37 by ajelloul         ###   ########.fr       */
+/*   Updated: 2025/02/27 17:12:59 by ajelloul         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,49 +27,56 @@ static void	sorting(t_stack **a, t_stack **b)
 	else if (len == 5)
 		sort_five(a, b);
 	else if (len <= 100)
-		range(a, b, 15);
+		chuncking(a, b, 14);
 	else if (len > 100 && len <= 500)
-		range(a, b, 35);
+		chuncking(a, b, 34);
 	else
-		range(a, b, 45);
+		chuncking(a, b, 50);
 }
 
-static int	get_position(t_stack *b, int max_idx)
+static int	get_max_idx_at_b(t_stack *b)
 {
-	int	pos;
+	int	i;
+	int	max;
+	int	tmp;
 
-	pos = 0;
+	i = 0;
+	max = 0;
+	tmp = b->data;
 	while (b)
 	{
-		if (b->index == max_idx)
-			return (pos);
-		pos++;
+		if (tmp < b->data)
+		{
+			max = i;
+			tmp = b->data;
+		}
+		i++;
 		b = b->next;
 	}
-	return (-1);
+	return (max);
 }
 
 static void	pushing_back_to_a(t_stack **a, t_stack **b)
 {
 	int	max_idx;
 	int	half_size;
-	int	pos;
 
 	while (*b)
 	{
-		max_idx = lstsize(*b) - 1;
 		half_size = lstsize(*b) / 2;
-		pos = get_position(*b, max_idx);
-		if ((*b)->index == max_idx)
+		max_idx = get_max_idx_at_b(*b);
+		if (max_idx == 0)
 		{
 			pa(a, b);
 		}
-		else if (pos > half_size)
+		else if (max_idx > half_size)
 		{
 			rrb(b);
 		}
 		else
+		{
 			rb(b);
+		}
 	}
 }
 
